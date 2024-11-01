@@ -1,18 +1,11 @@
-{
-  "extends": "@vue/tsconfig/tsconfig.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "isolatedModules": true,
-    "strict": true,
-    "jsx": "preserve"
-  },
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+export default defineConfig({
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      '@': '/src'
     }
-  ]
-}
+  }
+})
